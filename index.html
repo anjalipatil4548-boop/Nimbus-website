@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nimbus – IT Project</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f0;--surface:#fff;--ink:#12233b;--muted:#51627a;--accent:#2f5bff;--accent-ink:#fff;--signal:#ffb020;--line:#cfd8d4;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1726;--surface:#16233a;--ink:#e8eef9;--muted:#9fb0c8;--accent:#7b98ff;--accent-ink:#0e1726;--line:#2a3a56;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1726;--surface:#16233a;--ink:#e8eef9;--muted:#9fb0c8;--accent:#7b98ff;--accent-ink:#0e1726;--line:#2a3a56;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+nav b{font:800 22px "Bricolage Grotesque",sans-serif}
+nav div a{margin-left:22px;text-decoration:none;color:var(--muted);font-weight:500}
+nav div a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;padding:64px 0 88px}
+.hero h1{font-size:clamp(44px,7vw,84px);font-weight:800;letter-spacing:-.03em}
+.hero p{max-width:46ch;color:var(--muted);font-size:19px;margin:24px 0 32px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:500;border:0;cursor:pointer;font-size:16px}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink);margin-left:10px}
+.term{background:#0b1220;color:#d6e2ff;border-radius:14px;padding:20px;font:14px/1.7 ui-monospace,Menlo,Consolas,monospace;min-height:230px;box-shadow:8px 8px 0 var(--signal)}
+.term i{color:#6f8bb8;font-style:normal}.term em{color:#7be0a4;font-style:normal}
+.dots{display:flex;gap:6px;margin-bottom:14px}.dots span{width:10px;height:10px;border-radius:50%;background:#34466a}
+section{padding:72px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(30px,4vw,46px);letter-spacing:-.02em;margin-bottom:36px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feat{background:var(--surface);border-radius:6px 28px 6px 28px;padding:28px;border:1px solid var(--line)}
+.feat h3{font-size:24px;margin-bottom:10px}
+.feat p{margin:0;color:var(--muted)}
+.stack{display:flex;flex-wrap:wrap;gap:12px}
+.stack button{font:500 16px "IBM Plex Sans",sans-serif;padding:10px 18px;border-radius:999px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.stack button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+#stackNote{margin-top:24px;max-width:60ch;color:var(--muted);min-height:3.2em}
+.contact{background:var(--ink);color:var(--bg);border-radius:28px;padding:48px;text-align:left}
+.contact h2{margin-bottom:12px}.contact p{margin:0 0 24px;opacity:.8}
+.contact .btn{background:var(--signal);color:#12233b}
+footer{padding:32px 0;color:var(--muted);font-size:15px}
+@media(max-width:800px){.hero,.grid{grid-template-columns:1fr}.hero{padding:32px 0 56px}nav div a{margin-left:14px}.contact{padding:32px 24px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>Nimbus</b><div><a href="#about">About</a><a href="#stack">Tech</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero">
+<div>
+<h1>Your files, safe in the cloud.</h1>
+<p>Nimbus is our IT project: a simple web app to store, share and back up files from any device, with automatic encryption.</p>
+<a class="btn" href="#about">See how it works</a><a class="btn ghost" href="#contact">Contact us</a>
+</div>
+<div class="term" aria-label="Sample deployment log"><div class="dots"><span></span><span></span><span></span></div><div id="log"></div></div>
+</header>
+
+<section id="about">
+<h2>What Nimbus does</h2>
+<div class="grid">
+<div class="feat"><h3>Upload anywhere</h3><p>Drag in files from your laptop or phone and find them again in seconds.</p></div>
+<div class="feat"><h3>Share safely</h3><p>Send a private link that expires when you choose.</p></div>
+<div class="feat"><h3>Backed up</h3><p>Every file is encrypted and copied to a second server automatically.</p></div>
+</div>
+</section>
+
+<section id="stack">
+<h2>Built with</h2>
+<div class="stack" role="group" aria-label="Technologies">
+<button aria-pressed="true" data-n="HTML, CSS and JavaScript build the pages people see and use.">Frontend</button>
+<button aria-pressed="false" data-n="A Node.js server handles logins, uploads and sharing links.">Backend</button>
+<button aria-pressed="false" data-n="MySQL stores user accounts and file details.">Database</button>
+<button aria-pressed="false" data-n="Files are encrypted with AES-256 before they are stored.">Security</button>
+<button aria-pressed="false" data-n="The app runs on a cloud server, deployed with Git and Docker.">Hosting</button>
+</div>
+<p id="stackNote">HTML, CSS and JavaScript build the pages people see and use.</p>
+</section>
+
+<section id="contact">
+<div class="contact">
+<h2>Want to know more?</h2>
+<p>Ask about the project, the code or the demo.</p>
+<a class="btn" href="mailto:hello@example.com">Email the team</a>
+</div>
+</section>
+<footer>© 2026 Nimbus project. Made for learning.</footer>
+</div>
+
+<script>
+var lines=['<i>$</i> git push origin main','<em>✓</em> Tests passed (24/24)','<em>✓</em> Docker image built','<em>✓</em> Files encrypted','<em>✓</em> Deployed: nimbus is live','<i>$</i> _'];
+var log=document.getElementById('log'),i=0;
+function step(){if(i<lines.length){log.innerHTML+=lines[i++]+'<br>';setTimeout(step,650)}}
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){log.innerHTML=lines.join('<br>')}else{step()}
+document.querySelectorAll('.stack button').forEach(function(b){b.addEventListener('click',function(){
+document.querySelectorAll('.stack button').forEach(function(o){o.setAttribute('aria-pressed','false')});
+b.setAttribute('aria-pressed','true');document.getElementById('stackNote').textContent=b.dataset.n})});
+</script>
+</body>
+</html>
